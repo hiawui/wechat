@@ -10,10 +10,11 @@ module.exports = function(logConf) {
 		}
 		var log = 1;
 		for(var lv in logLevels) {
+			var n = logLevels[lv];
 			if (1 === log) {
-				obj[lv] = logger;
+				req[n] = logger;
 			} else {
-				obj[lv] = function() {}
+				req[n] = function() {}
 			}
 			if (lv === logLevel)
 				log = 0;
