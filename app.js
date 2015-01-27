@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var configure = require('./configure');
-var loggerFactory = require('./middlewares/loggerFactory');
+var loggerFactory = require('./middlewares/LoggerFactory');
 var api = require('./routes/api');
 
 var app = express();
