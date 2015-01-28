@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var xmlParser = require('express-xml-bodyparser');
 
 var configure = require('./configure');
 var loggerFactory = require('./middlewares/LoggerFactory');
@@ -18,6 +19,7 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(xmlParser());
 app.use(cookieParser());
 app.use(loggerFactory(configure.log));
 

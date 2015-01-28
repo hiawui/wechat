@@ -1,14 +1,10 @@
 var express = require('express');
+
+var callback = require('../middlewares/WechatCallback');
+
 var router = express.Router();
 
 /* GET home page. */
-router.all('/callback', function(req, res, next) {
-	req.debug('query='+JSON.stringify(req.query));
-	req.debug('body='+JSON.stringify(req.body));
-	var result = '';
-	if (req.query.echostr)
-		result = req.query.echostr;
-	res.end(result);
-});
+router.all('/callback', callback);
 
 module.exports = router;
