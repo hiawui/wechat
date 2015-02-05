@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "DEBUG=req node ./bin/www"
+    "start": "NODE_ENV=production DEBUG=hiawechat nodejs ./bin/www >> log.txt 2>&1 &"
   },
   "dependencies": {
     "body-parser": "~1.10.2",

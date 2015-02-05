@@ -3,7 +3,7 @@ var logLevels = ['fatal', 'error', 'warn', 'info', 'debug'];
 
 module.exports = function(logConf) {
 	return function(req, res, next) {
-		var logger = debug('req');
+		var logger = debug('hiawechat:req');
 		var logLevel = logConf.level;
 		if('undefined' === logLevel || null === logLevel) {
 			logLevel = 'info';
